@@ -1,0 +1,45 @@
+/* Custom Modal Styles - Full Screen with Scrollable Content */
+
+/* Make modal dialog full screen */
+.portfolio-modal .modal-dialog {
+    max-width: 50vw !important;
+    margin: 0 !important;
+    height: 100vh !important;
+}
+
+/* Make modal content fill the entire viewport */
+.portfolio-modal .modal-content {
+    height: 100vh !important;
+    border: none !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Fix the header at the top */
+.portfolio-modal .modal-header {
+    flex-shrink: 0 !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1055 !important;
+    background-color: white !important;
+}
+
+/* Make the modal body scrollable */
+.portfolio-modal .modal-body {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* Smooth scrolling for modal content */
+.portfolio-modal .modal-body {
+    scroll-behavior: smooth;
+}
+
+/* Optional: Add padding to prevent content from touching edges on mobile */
+@media (max-width: 768px) {
+    .portfolio-modal .modal-body {
+        padding: 1.5rem !important;
+    }
+}
