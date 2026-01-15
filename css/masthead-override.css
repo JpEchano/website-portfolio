@@ -7,9 +7,9 @@
     min-height: 100vh;
     position: relative;
     overflow: hidden;
-    /* Explicitly set blue background to override white from styles.css */
-    background: #4880ff !important;
-    background-color: #4880ff !important;
+    /* Explicitly set blue background and wavy background image */
+    background: #4880ff url('../assets/img/background2.png') no-repeat center center !important;
+    background-size: cover !important;
     /* Remove the dark text color override */
     color: #fff !important;
 }
@@ -93,12 +93,29 @@
     position: relative;
     z-index: 5;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
 }
 
 .hero-img {
-    max-width: 90%;
+    max-width: 85%;
+    position: relative;
+    z-index: 2;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
     animation: floatImage 6s ease-in-out infinite;
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    max-width: 110%;
+    opacity: 0.9;
+    pointer-events: none;
 }
 
 @keyframes floatImage {
@@ -201,29 +218,122 @@
 
 /* Responsive Adjustments */
 @media (max-width: 991.98px) {
-    .masthead {
-        text-align: center;
-        padding-top: 8rem;
+    .d-contents-mobile {
+        display: contents !important;
     }
 
-    .masthead-heading {
-        font-size: 2.5rem;
+    .masthead {
+        text-align: center;
+        padding-top: 4rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        background: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+            #4880ff url('../assets/img/background2.png') no-repeat center center !important;
+        background-size: cover !important;
+    }
+
+    .masthead .masthead-heading {
+        font-size: 2rem !important;
+        letter-spacing: -0.02em;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+        margin-bottom: 1.5rem !important;
+        line-height: 1.1;
+        padding-top: 6px;
     }
 
     .masthead-subheading {
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 2rem !important;
     }
 
-    .masthead-stats {
+    .masthead-actions {
+        margin-top: 2rem;
+        margin-bottom: 3rem !important;
+        width: 100%;
+        display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
-    .stat-item {
-        margin-right: 2rem !important;
+    .masthead-actions .btn-xl {
+        margin: 0 !important;
     }
 
-    .stat-item:last-child {
-        margin-right: 0 !important;
+    /* Hero Image Mobile Scaling */
+    .hero-image-container {
+        min-height: 200px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .hero-image-container::before {
+        content: '';
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .hero-img {
+        max-width: 60%;
+    }
+
+    .hero-bg-img {
+        max-width: 80%;
+    }
+
+    .floating-tag {
+        padding: 0.4rem 0.8rem;
+        background: rgba(255, 255, 255, 0.6) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .floating-tag span {
+        font-size: 0.75rem;
+    }
+
+    .tag-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 6px;
+        font-size: 0.7rem;
+    }
+
+    .tag-1 {
+        top: 10%;
+        left: -5%;
+        right: auto;
+    }
+
+    .tag-2 {
+        top: 45%;
+        right: -2%;
+    }
+
+    .tag-3 {
+        bottom: 15%;
+        left: 0%;
+        right: auto;
+    }
+
+    .bg-circle-1 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .bg-circle-2 {
+        width: 350px;
+        height: 350px;
     }
 }

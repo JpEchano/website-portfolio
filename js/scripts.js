@@ -44,6 +44,73 @@ window.addEventListener('DOMContentLoaded', event => {
             });
         });
 
+        // Close responsive navbar when scrolling
+        window.addEventListener('scroll', () => {
+            const navbarCollapse = document.querySelector('#navbarResponsive');
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
+            }
+        });
+
+        // Close responsive navbar when clicking outside
+        document.addEventListener('click', (event) => {
+            const navbarCollapse = document.querySelector('#navbarResponsive');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                if (!navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
+                    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+                    if (bsCollapse) {
+                        bsCollapse.hide();
+                    }
+                }
+            }
+        });
+
+        // Dynamic Navbar Text Color based on section background
+        const sections = document.querySelectorAll('section, header.masthead');
+        const mainNavElement = document.querySelector('#mainNav');
+
+        console.log('Navbar color switcher initialized');
+
+        if (mainNavElement && sections.length > 0) {
+            const updateNavbarColor = () => {
+                const x = window.innerWidth / 2;
+                const y = 50;
+
+                // Use elementsFromPoint to get ALL elements at this position
+                // This allows us to "see through" the navbar
+                const elementsAtPoint = document.elementsFromPoint(x, y);
+                if (!elementsAtPoint || elementsAtPoint.length === 0) return;
+
+                // Find the first element that is a section or header (excluding the navbar itself)
+                let currentSection = null;
+                for (const el of elementsAtPoint) {
+                    const section = el.closest('section, header.masthead');
+                    if (section && !mainNavElement.contains(section)) {
+                        currentSection = section;
+                        break;
+                    }
+                }
+
+                if (currentSection) {
+                    const isWhiteSection = !currentSection.classList.contains('bg-primary') &&
+                        !currentSection.classList.contains('bg-primary-1');
+
+                    if (isWhiteSection) {
+                        mainNavElement.classList.add('navbar-light-mode');
+                    } else {
+                        mainNavElement.classList.remove('navbar-light-mode');
+                    }
+                }
+            };
+
+            document.addEventListener('scroll', updateNavbarColor);
+            updateNavbarColor();
+        }
+
         // Scroll Reveal Implementation
         const revealOptions = {
             threshold: 0.1,
