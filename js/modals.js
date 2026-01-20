@@ -5,7 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
         'cms.html',
         'lms.html',
         'safe.html',
-        'submarine.html'
+        'submarine.html',
+        'utility-apps.html',
+        'sav-e.html',
+        'freenet.html',
+        'chikka.html',
+        'paymaya-sdk.html',
+        'powerapp.html',
+        'parkplus.html',
+        'mypal.html',
+        'safezone.html',
+        'smartnet.html'
     ];
 
     const modalContainer = document.createElement('div');

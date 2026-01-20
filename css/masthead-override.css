@@ -108,6 +108,9 @@
     z-index: 2;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
     animation: floatImage 6s ease-in-out infinite;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 .hero-bg-img {
@@ -146,16 +149,22 @@
 }
 
 .tag-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     background: #eef3ff;
     color: #4880ff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
-    font-size: 0.9rem;
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.tag-img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
 }
 
 .floating-tag span {
@@ -310,10 +319,15 @@
     }
 
     .tag-icon {
-        width: 24px;
-        height: 24px;
-        margin-right: 6px;
-        font-size: 0.7rem;
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+        font-size: 0.9rem;
+    }
+
+    .tag-img {
+        width: 20px;
+        height: 20px;
     }
 
     .tag-1 {
