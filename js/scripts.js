@@ -96,7 +96,8 @@ window.addEventListener('DOMContentLoaded', event => {
                 }
 
                 if (currentSection) {
-                    const isWhiteSection = !currentSection.classList.contains('bg-primary') &&
+                    const isWhiteSection = !currentSection.classList.contains('bg-slate-900') &&
+                        !currentSection.classList.contains('bg-primary') &&
                         !currentSection.classList.contains('bg-primary-1');
 
                     if (isWhiteSection) {

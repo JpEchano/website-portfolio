@@ -12,19 +12,6 @@ html {
     transform: translateY(0) !important;
 }
 
-/* Default navbar styles - WHITE for blue sections */
-#mainNav .navbar-brand {
-    color: #fff !important;
-}
-
-#mainNav .navbar-nav li.nav-item a.nav-link {
-    color: #fff !important;
-}
-
-#mainNav .navbar-nav li.nav-item a.nav-link:hover {
-    color: rgba(255, 255, 255, 0.8) !important;
-}
-
 /* Navbar toggler as text */
 #mainNav .navbar-toggler {
     color: #fff !important;
@@ -44,31 +31,31 @@ html {
 
 /* Navbar color switching for WHITE sections - DARK text */
 #mainNav.navbar-light-mode .navbar-brand {
-    color: #2c3e50 !important;
+    color: var(--slate-900) !important;
 }
 
 #mainNav.navbar-light-mode .navbar-nav li.nav-item a.nav-link {
-    color: #2c3e50 !important;
+    color: var(--slate-700) !important;
 }
 
 #mainNav.navbar-light-mode .navbar-nav li.nav-item a.nav-link:hover {
-    color: #4880ff !important;
+    color: var(--primary-600) !important;
 }
 
 #mainNav.navbar-light-mode .navbar-nav li.nav-item a.nav-link:active,
 #mainNav.navbar-light-mode .navbar-nav li.nav-item a.nav-link:focus {
-    color: #4880ff !important;
+    color: var(--primary-600) !important;
 }
 
 #mainNav.navbar-light-mode .navbar-nav li.nav-item a.nav-link.active {
-    color: #4880ff !important;
+    color: var(--primary-600) !important;
 }
 
 #mainNav.navbar-light-mode .navbar-toggler {
-    color: #2c3e50 !important;
+    color: var(--slate-900) !important;
 }
 
 #mainNav.navbar-light-mode .navbar-toggler:hover {
-    color: #4880ff !important;
+    color: var(--primary-600) !important;
     opacity: 1;
 }

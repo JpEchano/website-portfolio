@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { file: 'header.html', containerId: 'header-container' },
         { file: 'masthead.html', containerId: 'masthead-container' },
         { file: 'about.html', containerId: 'about-container' },
-        { file: 'experience.html', containerId: 'experience-container' },
-        { file: 'skills.html', containerId: 'skills-container' },
+        { file: 'experience.html', containerId: 'process-container' },
+        { file: 'skills.html', containerId: 'expertise-container' },
         { file: 'portfolio.html', containerId: 'portfolio-container' },
         { file: 'contact.html', containerId: 'contact-container' },
         { file: 'footer.html', containerId: 'footer-container' }

@@ -1,0 +1,305 @@
+:root {
+    /* Primary Palette */
+    --primary-600: #2563eb;
+    /* Indigo */
+    --primary-700: #1d4ed8;
+    --primary-50: #eff6ff;
+
+    /* Neutrals */
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-100: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+
+    /* Semantic */
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #f59e0b;
+    --info: #06b6d4;
+
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* Spacing (8pt grid) */
+    --space-1: 0.25rem;
+    /* 4px */
+    --space-2: 0.5rem;
+    /* 8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
+    --space-20: 5rem;
+    /* 80px */
+    --space-24: 6rem;
+    /* 96px */
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 2px 4px -1px rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+    --shadow-lg: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Utility Classes */
+.bg-slate-900 {
+    background-color: var(--slate-900) !important;
+}
+
+.bg-slate-800 {
+    background-color: var(--slate-800) !important;
+}
+
+.bg-slate-50 {
+    background-color: var(--slate-50) !important;
+}
+
+.bg-primary-600 {
+    background-color: var(--primary-600) !important;
+}
+
+.bg-primary-50 {
+    background-color: var(--primary-50) !important;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.text-slate-900 {
+    color: var(--slate-900) !important;
+}
+
+.text-slate-800 {
+    color: var(--slate-800) !important;
+}
+
+.text-slate-700 {
+    color: var(--slate-700) !important;
+}
+
+.text-slate-600 {
+    color: var(--slate-600) !important;
+}
+
+.text-slate-500 {
+    color: var(--slate-500) !important;
+}
+
+.text-slate-400 {
+    color: var(--slate-400) !important;
+}
+
+.text-slate-300 {
+    color: var(--slate-300) !important;
+}
+
+.text-primary-600 {
+    color: var(--primary-600) !important;
+}
+
+/* Global Reset Overrides */
+body {
+    font-family: var(--font-sans);
+    color: var(--slate-800);
+    line-height: 1.6;
+    background-color: var(--slate-50);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-sans) !important;
+    font-weight: 700 !important;
+    color: var(--slate-900) !important;
+    letter-spacing: -0.025em !important;
+}
+
+/* Dark background overrides for headings */
+.bg-slate-900 h1,
+.bg-slate-900 h2,
+.bg-slate-900 h3,
+.bg-slate-900 h4,
+.bg-slate-900 h5,
+.bg-slate-900 h6,
+.masthead h1,
+.masthead h2,
+.masthead h3,
+.masthead h4,
+.masthead h5,
+.masthead h6 {
+    color: white !important;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, var(--primary-600), var(--info));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-professional {
+    padding: var(--space-3) var(--space-6);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    text-decoration: none;
+}
+
+.btn-professional-primary {
+    background-color: var(--primary-600);
+    color: white !important;
+    border: none;
+}
+
+.btn-professional-primary:hover {
+    background-color: var(--primary-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    color: white !important;
+}
+
+.btn-professional-outline {
+    background-color: transparent;
+    border: 1px solid var(--slate-300);
+    color: white !important;
+}
+
+.btn-professional-outline:hover {
+    border-color: var(--slate-400);
+    background-color: var(--slate-100);
+    transform: translateY(-1px);
+    color: white !important;
+}
+
+.hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.hover-text-primary-600:hover {
+    color: var(--primary-600) !important;
+}
+
+.hover-text-white:hover {
+    color: white !important;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--slate-50);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--slate-300);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--slate-400);
+}
+
+/* Navbar Fixes */
+#mainNav {
+    transition: all 0.3s ease;
+    background-color: transparent !important;
+}
+
+#mainNav.navbar-shrink {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#mainNav.navbar-shrink .nav-link {
+    color: var(--slate-700) !important;
+}
+
+#mainNav.navbar-shrink .navbar-brand {
+    color: var(--slate-900) !important;
+}
+
+/* Light Mode Navbar (for dark sections) */
+#mainNav:not(.navbar-shrink) .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#mainNav:not(.navbar-shrink) .navbar-brand {
+    color: white !important;
+}
+
+#mainNav:not(.navbar-shrink) .nav-link:hover {
+    color: white !important;
+}
+
+/* Form Fixes */
+.form-control {
+    border: 1px solid var(--slate-200) !important;
+    color: var(--slate-900) !important;
+    background-color: white !important;
+}
+
+.form-control::placeholder {
+    color: var(--slate-400) !important;
+}
+
+.form-control:focus {
+    border-color: var(--primary-600) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Hero Heading Fix */
+.masthead h1 {
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* Floating Stat Cards Fix */
+.hero-image-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
