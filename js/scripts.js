@@ -114,29 +114,31 @@ window.addEventListener('DOMContentLoaded', event => {
 
         // Scroll Reveal Implementation
         const revealOptions = {
-            threshold: 0.1,
+            threshold: 0.15,
             rootMargin: "0px 0px -50px 0px"
         };
 
         const revealCallback = (entries) => {
             entries.forEach(entry => {
-                const rect = entry.boundingClientRect;
-
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                } else if (rect.top > 0) {
-                    // If not intersecting and top is positive, it's below the viewport
-                    entry.target.classList.remove('visible');
+                } else {
+                    // Remove visible class when element is below the viewport
+                    // This allows the animation to re-trigger when scrolling back down
+                    if (entry.boundingClientRect.top > 0) {
+                        entry.target.classList.remove('visible');
+                    }
                 }
             });
         };
 
         const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
 
-        // Target all sections and the masthead
-        const revealElements = document.querySelectorAll('section, header.masthead');
+        // Target all elements with reveal classes
+        const revealElements = document.querySelectorAll(
+            '.reveal-fade-in, .reveal-slide-up, .reveal-slide-left, .reveal-slide-right, .reveal-scale-up, .reveal-staggered'
+        );
         revealElements.forEach(el => {
-            el.classList.add('scroll-reveal');
             revealObserver.observe(el);
         });
 

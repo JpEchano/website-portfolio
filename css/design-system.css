@@ -277,6 +277,201 @@ h6 {
 }
 
 /* Floating Stat Cards Fix */
+
+.text-slate-800 {
+    color: var(--slate-800) !important;
+}
+
+.text-slate-700 {
+    color: var(--slate-700) !important;
+}
+
+.text-slate-600 {
+    color: var(--slate-600) !important;
+}
+
+.text-slate-500 {
+    color: var(--slate-500) !important;
+}
+
+.text-slate-400 {
+    color: var(--slate-400) !important;
+}
+
+.text-slate-300 {
+    color: var(--slate-300) !important;
+}
+
+.text-primary-600 {
+    color: var(--primary-600) !important;
+}
+
+/* Global Reset Overrides */
+body {
+    font-family: var(--font-sans);
+    color: var(--slate-300);
+    line-height: 1.6;
+    background-color: var(--slate-900);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-sans) !important;
+    font-weight: 700 !important;
+    color: white !important;
+    letter-spacing: -0.025em !important;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, var(--primary-600), var(--info));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-professional {
+    padding: var(--space-3) var(--space-6);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    text-decoration: none;
+}
+
+.btn-professional-primary {
+    background-color: var(--primary-600);
+    color: white !important;
+    border: none;
+}
+
+.btn-professional-primary:hover {
+    background-color: var(--primary-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    color: white !important;
+}
+
+.btn-professional-outline {
+    background-color: transparent;
+    border: 1px solid var(--slate-300);
+    color: white !important;
+}
+
+.btn-professional-outline:hover {
+    border-color: var(--slate-400);
+    background-color: var(--slate-800);
+    transform: translateY(-1px);
+    color: white !important;
+}
+
+.hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.hover-text-primary-600:hover {
+    color: var(--primary-600) !important;
+}
+
+.hover-text-white:hover {
+    color: white !important;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--slate-900);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--slate-700);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--slate-600);
+}
+
+/* Navbar Fixes */
+#mainNav {
+    transition: all 0.3s ease;
+    background-color: transparent !important;
+}
+
+#mainNav.navbar-shrink {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#mainNav.navbar-shrink .nav-link {
+    color: var(--slate-300) !important;
+}
+
+#mainNav.navbar-shrink .navbar-brand {
+    color: white !important;
+}
+
+/* Light Mode Navbar (for dark sections) */
+#mainNav:not(.navbar-shrink) .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#mainNav:not(.navbar-shrink) .navbar-brand {
+    color: white !important;
+}
+
+#mainNav:not(.navbar-shrink) .nav-link:hover {
+    color: white !important;
+}
+
+/* Form Fixes */
+.form-control {
+    border: 1px solid var(--slate-700) !important;
+    color: white !important;
+    background-color: var(--slate-800) !important;
+}
+
+.form-control::placeholder {
+    color: var(--slate-500) !important;
+}
+
+.form-control:focus {
+    border-color: var(--primary-600) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Hero Heading Fix */
+.masthead h1 {
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* Floating Stat Cards Fix */
 .hero-image-wrapper {
     position: relative;
     z-index: 1;
@@ -286,4 +481,116 @@ h6 {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* Animation Utilities */
+.reveal-fade-in,
+.reveal-slide-up,
+.reveal-slide-left,
+.reveal-slide-right,
+.reveal-scale-up {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-fade-in.visible {
+    opacity: 1;
+}
+
+.reveal-slide-up {
+    transform: translateY(30px);
+}
+
+.reveal-slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-slide-left {
+    transform: translateX(-30px);
+}
+
+.reveal-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-slide-right {
+    transform: translateX(30px);
+}
+
+.reveal-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale-up {
+    transform: scale(0.95);
+}
+
+.reveal-scale-up.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Staggered Animation Logic */
+.reveal-staggered>* {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-staggered.visible>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Generate delays for up to 12 items */
+.reveal-staggered.visible>*:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.reveal-staggered.visible>*:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.reveal-staggered.visible>*:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.reveal-staggered.visible>*:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.reveal-staggered.visible>*:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.reveal-staggered.visible>*:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.reveal-staggered.visible>*:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.reveal-staggered.visible>*:nth-child(8) {
+    transition-delay: 0.8s;
+}
+
+.reveal-staggered.visible>*:nth-child(9) {
+    transition-delay: 0.9s;
+}
+
+.reveal-staggered.visible>*:nth-child(10) {
+    transition-delay: 1.0s;
+}
+
+.reveal-staggered.visible>*:nth-child(11) {
+    transition-delay: 1.1s;
+}
+
+.reveal-staggered.visible>*:nth-child(12) {
+    transition-delay: 1.2s;
 }
