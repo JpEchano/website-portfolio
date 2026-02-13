@@ -68,7 +68,12 @@ document.addEventListener('sectionsLoaded', () => {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            const response = await fetch('https://formspree.io/f/xykkyyrz', {
+            // Get Formspree ID from JSON content
+            const configResponse = await fetch('content/contact.json');
+            const config = await configResponse.json();
+            const formspreeId = config.formspreeId || 'mnjbpgpw';
+
+            const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
